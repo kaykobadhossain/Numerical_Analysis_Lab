@@ -6,14 +6,40 @@ int main()
     float A[20][20],c,x[10],sum=0.0;
 
     cout<<"\The elements of augmented matrix row-wise: "<<endl;
-    for(i=1; i<=n; i++)
-    {
-        for(j=1; j<=(n+1); j++)
-        {
-            cout<<"A"<<"["<<i<<"]"<<"["<<j<<"]"<<" : ";
-            cin>>A[i][j];
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n+1;j++){
+            float p;
+            if(i == 1){
+                p = 5;
+                A[i][4] = 106.8;
+            }
+             if(i == 2){
+                p = 8;
+                A[i][4] = 177.2;
+            }
+             if(i == 3){
+                p = 11;
+                A[i][4] = 279.2;
+            }
+
+            if(j == 1)
+            {
+                A[i][j] = p*p;
+                cout<<"A["<<i<<"]"<<"["<<j<<"]: "<<A[i][j]<<endl;
+            }
+            if(j == 2)
+            {
+                A[i][j] = p;
+                cout<<"A["<<i<<"]"<<"["<<j<<"]: "<<A[i][j]<<endl;
+            }
+            if(j == 3)
+            {
+                A[i][j] = 1;
+                cout<<"A["<<i<<"]"<<"["<<j<<"]: "<<A[i][j]<<endl;
+            }
         }
     }
+
     for(j=1; j<=n; j++)
     {
         for(i=1; i<=n; i++)
